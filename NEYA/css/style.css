@@ -1,0 +1,1691 @@
+/*
+FILENAME: style.css
+AUTHOR: Amal Tidjani
+DATE: JULY-SEPTEMBER 2016
+PURPOSE: Master CSS stylesheet for NEYA site
+*/
+
+
+/*
+********************************************************************************
+UNIVERSAL DESIGN
+********************************************************************************
+*/
+
+body {
+  margin: 0 auto; /*Center Body*/
+  width: 1500px;
+  background-color: #BAD79B; /*Pastel Green*/
+  font-family: 'Cinzel', serif;
+}
+
+/* --------------------------- HEADER --------------------------------- */
+  /*Consists of navigation menu and an image of tiles, which functions
+    as a decorative bottom border for the navigation menu*/
+
+header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: #000; /*Black*/
+}
+
+/* ___________________ Navigation Menu _____________________ */
+
+.nav_menu ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  font-size: 25px;
+  color: #fff; /*White*/
+}
+
+.nav_menu > ul > li {
+/*Spaces the "tab links" horizontally across header, excluding the links
+  in the drop-down menu, which will be stacked vertically */
+  margin-top: 10px;
+  padding: 20px 40px;
+  float: left;
+}
+
+.nav_menu a {
+/*Overrides Default Link Styling*/
+  text-decoration: none;
+  color: #fff; /*White*/
+}
+
+.nav_menu a:hover, #drop_menu:hover {
+/*Link Hover Effect (Link Color Change)*/
+  font-weight: 900;
+  color: #71B238;
+  transition: .5s ease;
+}
+
+/*-------------------------------------------------------
+  Code borrowed/adapted from Brad Knutson at
+  http://bradsknutson.com/blog/css-sliding-underline/
+
+  Adds an animated underline when link is hovered over.
+  Excludes links in drop-down menu.
+--------------------------------------------------------*/
+
+.nav_menu > ul > li > a:after {
+	content: '';
+  margin: auto;
+	height: 3px;
+	width: 0px;
+	display: block;
+	background: #fff;
+	transition: width .5s ease, background-color .5s ease;
+}
+
+.nav_menu > ul > li > a:hover:after {
+  width: 100%;
+	background: #71B238;
+} /*End borrowed code*/
+
+/* ________________ Drop-Down Menu ________________ */
+
+#drop_menu {
+  position: relative;
+}
+
+#drop_menu ul {
+  position: absolute;
+  width: 340px;
+  top: 80%;
+  left: 0;
+  background-color: black;
+  z-index: 100;
+}
+
+#drop_menu li {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  /*Makes Menu Drop Down Smoothly*/
+  -webkit-transition:height 0.3s ease-in;
+  -moz-transition:height 0.3s ease-in;
+  transition:height 0.3s ease-in;
+}
+
+#drop_menu:hover li {
+  height: 50px;
+}
+
+#drop_menu li:hover {
+  background-color: #333;
+}
+
+#drop_menu a {
+  display: block;
+  padding: 10px 40px;
+}
+
+/* --------------------------- FOOTER --------------------------------- */
+  /*Footer is divided into 3 columns: A "Learn More" column with
+    the site's important page links; A "Follow Us" column containing
+    animated icons that link to NEYA's different social media accounts;
+    A "Contact Us" column with basic contact information along with
+    animated icons that link to the site's contact page*/
+
+
+footer {
+  width: 100%;
+  height: 400px;
+  background-color: #000; /*Black*/
+  font-size: 20px;
+  color: #fff; /*White*/
+}
+
+/*________________ Divide Footer Into 3 Columns_________________*/
+
+#learn_more, #follow_us, #contact_us {
+  margin-left: 170px;
+  float: left;
+}
+
+
+/*Format Column Headers*/
+footer h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+/* ___________________ Column 1: Learn More _________________ */
+
+/*Adjust Column Title Placement*/
+#learn_more h3 {
+  margin-left: 15px;
+}
+
+/*Style Links*/
+
+#learn_more a {
+/*Adds more line spacing between links*/
+  line-height: 2em;
+}
+
+#learn_more a:link, #learn_more a:visited {
+  color: #fff;
+}
+
+#learn_more a:hover {
+  color: #71B238;
+}
+
+#learn_more img {
+/*Anytime a link is hovered over, 2 greeb bullet points
+  around the link (hover/animation effect)*/
+  visibility: hidden; /*When link is not hovered over*/
+  width: 15px;
+}
+
+/* __________________ Column 2: Follow Us ___________________ */
+
+/*Readjust Column Title Placement*/
+#follow_us h3 {
+  text-align: center;
+}
+
+/*Adjust Spacing Between Icons*/
+#follow_us a {
+  padding-right: 20px;
+}
+
+/* _______ Hover Animation For Icons ______ */
+
+.connect_icons:hover {
+  /*Hover On: Rotate Icon 360deg*/
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  /*Hover On: Render Icon Black & White*/
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  /*Makes Animations Smooth*/
+  transition: 0.5s ease;
+}
+
+.connect_icons {
+  /*Initial State (Hover Off): Undue Rotation*/
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  /*Initial State (Hover Off): Undue Grayscale*/
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  /*Makes Animations Smooth*/
+  transition: 0.5s ease;
+}
+
+
+/* _____________________ Column 3: Contact Us _________________ */
+
+#contact_us {
+  position: relative;
+}
+
+.contact_icons {
+  display: flex;
+  align-items: center;
+}
+
+/* _____ Hover Animation For Icons _____ */
+
+.contact_icons:not(:nth-of-type(2)) img:hover {
+  cursor: pointer;
+  /*Hover On: Make Black & White*/
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  /*Hover On: Make Icon Larger*/
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  /*Make Animations Smooth*/
+  transition: .5s ease;
+}
+
+.contact_icons img {
+  padding-right: 20px;
+  float: left;
+  /*Initial State (Hover Off): Undue Grayscale*/
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  /*Initial State (Hover Off): Undue Resizing*/
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  /*Make Animations Smooth*/
+  transition: .5s ease;
+}
+
+/*__________________ Calling Hours Alert Box ____________ */
+
+.alert {
+/*Styling for alert box*/
+  position: absolute;
+  padding: 10px;
+  width: 320px;
+  top: 240px;
+  left: 59px;
+  display: none;
+  background-color: #FFFFC8; /*Lemon Chiffon*/
+  border: 2px solid #aaa; /*Gray*/
+  font-weight: bold;
+  color: #555; /*Dark Gray*/
+}
+
+.alert img {
+/*Styling for red exclamation image*/
+  padding-right: 10px;
+  float: left;
+  width: 25px;
+}
+
+#triangle {
+/*Styling for "callout" triangle*/
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 20px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #FFFFC8;
+}
+
+/*______________________ Footer Copyright ___________________ */
+
+#footer_line {
+  clear: both;
+  margin-left: 529px;
+  width: 25%;
+  border-style: dotted;
+  color: #999; /*Gray*/
+}
+
+#copyright {
+  clear: both;
+  margin-left: 570px;
+  font-size: medium;
+  font-weight: bolder;
+  color: #999; /*Gray*/
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR INDEX.HTML
+********************************************************************************
+*/
+
+#main_index {
+  position: relative;
+  height: 850px;
+  background-image: url("../images/bkgnd1.png");
+}
+
+/*Styling for yellow-green vertical sidebar*/
+#decor_bar {
+  margin-top: -1px;
+  margin-left: 60px;
+  width: 452px;
+  height: 100%;
+  float: left;
+}
+
+/*Styling For "NEYA" Title*/
+#main_index > h1 {
+  position: relative;
+  margin-top: 50px;
+  margin-left: -100px;
+  width: 550px;
+  float: left;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 230px;
+  line-height: 1.1em;
+  color: #fff; /*White*/
+  /*Ensures title smoothly returns to initial size after hover*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+/* --------- Styling For Slogan ------------*/
+
+#slogan {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 100px;
+  width: 400px;
+  float: left;
+  color: #fff; /*White*/
+  /*Scale the slogan div to a smaller initial size*/
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  /*Ensures slogan smoothly returns to inital size after hover*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.slogan_spacing {
+/* Adjusts Vertical Spacing of Slogan Components*/
+  margin: 0;
+  margin-bottom: -10px;
+  font-size: 50px;
+}
+
+/*Slogan Number: "1"*/
+#slogan_num {
+  margin-top: -80px;
+  float: left;
+  font-family: "Candal", sans-serif;
+  font-size: 245px;
+}
+
+/*Slogan Line 1: "Family"*/
+#slogan1 {
+  font-family: "Caveat Brush", cursive;
+}
+
+/*Slogan Line 2: "Goal"*/
+#slogan2 {
+  margin-top: -45px;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 100px;
+}
+
+/*Slogan Line 3: "Purpose"*/
+#slogan3 {
+  margin-top: -45px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 60px;
+}
+
+/* -------- Hovering Effects (NEYA Title and Slogan) -------- */
+
+#main_index h1:hover, #slogan:hover {
+  color: gold;
+}
+
+#main_index h1:hover {
+  -webkit-transform: scale(1.10);
+  -moz-transform: scale(1.10);
+  transform: scale(1.10);
+}
+
+#slogan:hover {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+/* -------- Make NEYA Title and Slogan Clickable/Redirect to Link -------- */
+
+.linkable {
+/*This class resizes span elements to encompass entire "NEYA" title and
+  slogan so that they are clickable links.*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /*Brings span in front of div or header*/
+}
+
+/* -------------------- Styling For Image Slideshow ----------------------- */
+
+/* Green Slideshow Background */
+#slideshow_container {
+  position: absolute;
+  top: 249px;
+  left: 400px;
+}
+
+/* ________ Circular Image Containers ________ */
+
+.img_container {
+  position: absolute;
+  /*Fade Transition Between Slides*/
+  -moz-transition: background 2s linear;
+  transition: background 2s linear;
+}
+
+.large {
+  width: 360px;
+  height: 360px;
+  top: 350px;
+  left: 770px;
+  border-radius: 400px;
+}
+
+.small {
+  width: 260px;
+  height: 260px;
+  top: 530px;
+  background-size: 100%;
+  background-color:rgba(150,150,150,0.5); /*Grayscale Effect*/
+  border-radius: 260px;
+}
+
+#img1 {
+  left: 490px;
+}
+
+#img3 {
+  left: 1150px;
+}
+
+/* _____ Dotted Image Borders _____ */
+
+.border_small {
+  position: absolute;
+  top: 460px;
+}
+
+#img_border1 {
+  left: 420px;
+}
+
+.border_large {
+  position: absolute;
+  top: 305px;
+  left: 726px;
+}
+
+#img_border3 {
+  left: 1080px;
+}
+
+/* ____________ Make Dotted Image Borders Rotate _____________*/
+
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+  from{
+      transform: rotate(0deg);
+  }
+  to{
+      transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 30s linear infinite;
+  animation: rotating 30s linear infinite;
+}
+
+/* _______ Darkened Small Image Filter __________ */
+
+.img_filter {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 530px;
+  background-color: #000; /*White*/
+  border-radius: 260px;
+  opacity: 0.5;
+}
+
+#filter_left {
+  left: 490px;
+}
+
+#filter_right {
+  left: 1150px;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR WHO_WE_ARE.HTML
+********************************************************************************
+*/
+
+#main_who_we_are {
+  padding-top: 30px;
+  width: 100%;
+  height: 1100px;
+  /*Transparent Background Pattern from https://www.transparenttextures.com/ */
+  background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  background-color: #71B238; /*Light Gray*/
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-align: center;
+}
+
+
+
+#main_who_we_are h1 {
+  margin: 0;
+  font-size: 80px;
+  color: #333;
+}
+
+.text {
+  margin: 20px auto;
+  margin-bottom: 70px;
+  padding: 15px 35px;
+  width: 50%;
+  background-color: #333;
+  border-radius: 10px;
+  text-align: left;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 40px;
+  color: #ccc;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR OUR_STORY.HTML
+********************************************************************************
+*/
+
+#main_story {
+  padding-top: 30px;
+  width: 100%;
+  height: 700px;
+  /*Transparent Background Pattern from https://www.transparenttextures.com/ */
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-align: center;
+  background-color: #333; /*Yellow-Green*/
+}
+
+#main_story h1 {
+  margin: 0;
+  font-size: 80px;
+  color: #bcb;
+}
+
+#main_story p {
+  margin: 20px auto;
+  margin-bottom: 70px;
+  padding: 15px 35px;
+  width: 53%;
+  background-color: #71B238;
+  border-radius: 10px;
+  text-align: left;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 40px;
+  color: #333;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR OUR_LEADERS.HTML
+********************************************************************************
+*/
+
+#main_leader {
+  height: 1350px;
+  background-color: #B2C614; /*Lime Green*/
+}
+
+/* -------------- Styling For "MEET OUT LEADERS" TITLE BAR------------------- */
+
+.title_banner {
+/*Styling for title banners on other pages of the site*/
+  margin: 0;
+  padding: 50px;
+  border-bottom: 30px solid #FFFFC8; /*Lemon Chiffon*/
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 100px;
+  font-weight: bolder;
+  line-height: 0.7em;
+}
+
+#leader_title {
+/*Styling specific to to "Meet Our Leaders" title*/
+  height: 394px;
+  background: url(../images/leaders_title_bkgnd.png);
+  color: #8A8; /*Grayish Green*/
+}
+
+/* ---------------------- Styling For Leaders Bubble Chart ------------------------ */
+
+#leaders_chart_wrapper {
+/*Container that holds the leader biography bar (#bio_bar), the toggling
+  buttons menu (#leaders_toggle_bar), and the bubble chart (#leaders_chart)*/
+  margin-top: 35px;
+  overflow: hidden;
+}
+
+/* ________ Styling Leader Biography Bar _________ */
+
+#bio_bar {
+  margin: 0px 30px;
+  width: 440px;
+  height: 700px;
+  float: left;
+  background-color: #4B4400; /*Brown*/
+  border: 1px dotted #fff; /*White*/
+  border-radius: 8px;
+}
+
+.text_container {
+/*Styling for the lemon-chiffon colored boxes
+  containing textual leader information*/
+  margin: 10px 30px;
+  padding: 15px;
+  background-color: #FFFFC8; /*Lemon Chiffon*/
+  border: 1px dotted #555; /*Dark Gray*/
+  border-radius: 4px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: bolder;
+  color: #F1703F; /*Orange-Red*/
+}
+
+h1.text_container {
+/*Styling for "Leader Bio" title initially displayed
+  on bio_bar. To be replaced with leader's name on
+  bubble click*/
+  margin: 30px;
+  font-size: 45px;
+  text-align: center;
+  color: #555;
+}
+
+p.text_container {
+/*Styling for paragraph containing instructions
+  initially displayed on bio_bar*/
+  font-size: 30px;
+}
+
+#bio_bar span {
+/*The span elements are where data/info related
+  to each leader are dynamically loaded in.*/
+  font-family: 'Caveat Brush', cursive;
+  font-weight: normal;
+  font-size: 29px;
+  color: #555;
+}
+
+#position {
+/*Styling for span element that contains leader's
+  leadership position. Moves the entire position name
+  to the next line if too long to fit on first line. */
+  display: inline-block;
+  font-size: 25px;
+}
+
+#leader_name, #leader_basic, #leader_bio {
+/*Initially on page load (or when no bubble is clicked),
+  the text containers for leadership information should be
+  hidden so that the "Leader Bio" title and instructions
+  paragraph are visible. */
+  display: none;
+}
+
+/* ________ Styling Toggle Bar _________ */
+
+#leaders_toggle_bar {
+  margin-bottom: 100px;
+  margin-left: 30px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #4B4400; /*Brown*/
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFC8; /*Lemon Chiffon*/
+  cursor: pointer;
+}
+
+.button:hover, .active {
+  background-color: #FFFFC8; /*Lemon Chiffon*/
+  color: #4B4400; /*Brown*/
+}
+
+.skew {
+/*Gives buttons skewed right and left sides*/
+  margin-left: 15px;
+  float: left;
+  border-radius: 10px;
+  transform: skew(-10deg);
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+
+}
+
+/* ________ Styling For Leaders Bubble Chart _________ */
+
+#leaders_chart {
+  margin-bottom: 10px;
+  margin-left: 460px;
+  width: 1510px;
+  height: 600px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR SPONSORS.HTML
+********************************************************************************
+*/
+
+#main_sponsor {
+  position: relative;
+  height: 720px;
+  background-color: #71B238;
+  /*Transparent Background Pattern from https://www.transparenttextures.com/ */
+  background-image: url(../images/subtle-zebra-3d.png);
+}
+
+#main_sponsor p {
+  margin: 0 auto;
+  padding: 50px;
+  width: 700px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 70px;
+  text-align: center;
+  line-height: 1em;
+  color: #222;
+}
+
+/* __________ Formatting Sponsor Logos ________ */
+
+#main_sponsor img {
+  position: absolute;
+  float: left;
+  margin: 50px;
+}
+
+#pizza_hut {
+  top: 190px;
+  left: 330px;
+  width: 200px;
+}
+
+#bakery {
+  top: 190px;
+  left: 600px;
+  width: 220px;
+}
+
+#chipotle {
+  top: 200px;
+  left: 900px;
+  width: 170px;
+}
+
+#best_buy {
+  top: 400px;
+  left: 230px;
+  width: 220px;
+}
+
+#rasp {
+  top: 400px;
+  left: 500px;
+  width: 150px;
+}
+
+#tostitos {
+  top: 410px;
+  left: 685px;
+  width: 245px;
+}
+
+#shell {
+  top: 400px;
+  left: 980px;
+  width: 160px;
+}
+
+
+/*
+********************************************************************************
+CSS STYLING FOR PROGRAMS.HTML
+********************************************************************************
+*/
+
+#main_programs {
+  height: 1700px;
+  background-color: #000; /*White*/
+}
+
+/* ------------ Styling For "PROGRAMS & ACTIVITIES" TITLE BAR ---------------- */
+
+#programs_title {
+/*Note: Inherits from .title_banner in "our_leadership.html" css section*/
+  height: 200px;
+  background: url(../images/programs_title_bkgnd.png);
+  border-bottom-color: #000; /*Black*/
+  color: #222; /*Dark Gray*/
+}
+
+#programs_title span {
+/*Styling for the "&" symbol within page title*/
+  font-family: sans-serif;
+}
+
+/* ----------------------- Styling For Events Panel ------------------------ */
+
+#upcoming_events {
+/*Container for the 3 events divs*/
+  margin-left: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 250px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 24px;
+}
+
+.events {
+/*Styling for each green event div*/
+  margin: 15px;
+  padding: 10px;
+  width: 29%;
+  float: left;
+  background-color: #71B238; /*Lime Green*/
+  border-radius: 4px;
+}
+
+/*_____________ Styling Event Date ____________*/
+
+.display_date {
+/*Container for two black divs (day and month)
+  associated with each event's date*/
+  padding: 15px;
+  float: left;
+  text-align: center;
+}
+
+.date {
+/*Styles the "day" and "month" div to be similar*/
+  margin: 3px;
+  padding: 15px;
+  background-color: #000;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.day {
+/*Event Day*/
+  font-size: 50px;
+}
+
+.month {
+/*Event Month*/
+  font-size: 30px;
+}
+
+/*_____________ Styling Event Info ____________*/
+
+.info h1 {
+/*Styling for Event Name*/
+  margin-bottom: 0px;
+}
+
+.info p {
+/*Styling for Event Description*/
+  margin: 10px;
+}
+
+/*_____________ Styling Event Buttons ____________*/
+
+.event_btn:link, .event_btn:visited {
+  margin: 10px 130px;
+  margin-top: 20px;
+  padding: 15px;
+  display: block;
+  background-color: #eee; /*white*/
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  color: #000; /*black*/
+}
+
+.event_btn:hover {
+  background-color: #000;
+  color: #eee;
+}
+
+/* -------------------- Styling For Decorative Page Break --------------------- */
+
+.programs_h2 {
+/*Styling for "But Wait! There's more..." Title*/
+  margin: 0;
+  font-family: 'Farsan', cursive;
+  font-size: 40px;
+  text-align: center;
+  color: #eee;
+}
+
+#arrows {
+/*Styling for Arrows Image (Functions as Page Break)*/
+  margin: 20px auto;
+  display: block;
+}
+
+/* -------------- Styling For Activity Bubble Chart------------------- */
+
+#activity_chart_wrapper {
+/*Container that holds the leader biography bar (#bio_bar), the toggling
+  buttons menu (#leaders_toggle_bar), and the bubble chart (#leaders_chart)*/
+  margin-top: 100px;
+  margin-left: 100px;
+
+}
+
+/* ________ Styling Activity Info Bar _________ */
+
+#act_info_bar {
+  margin: 30px;
+  margin-top: 2px;
+  float: right;
+  width: 435px;
+  height: 620px;
+  background-color: #71B238;
+  border: 2px dotted #fff;
+  border-radius: 4px;
+}
+
+#act_info_bar .text_container {
+/*Styling for the gray colored boxes containing textual activity
+information. Note: More .text_container properties in our_leadership.html
+css section.*/
+  background-color: #ddd; /*Gray*/
+  border: 2px dotted #fff; /*White*/
+  color: #555; /*Dark Gray*/
+}
+
+#act_info_bar span {
+/*The span elements are where data/info related to each activity are
+  dynamically loaded in.*/
+  font-family: 'Caveat Brush', cursive;
+  font-weight: normal;
+  font-size: 31px;
+  color: #2F9D26; /*Forest Green*/
+}
+
+#category {
+/*Styling for span element that contains activity's program
+  category. Moves the entire category name to the next line
+  if too long to fit on first line. */
+  display: inline-block;
+}
+
+#activity_title, #activity_basic, #activity_descrip {
+/*Initially on page load (or when no bubble is clicked), the text
+  containers for activity information should be hidden so that the
+  "Activity" title and instructions paragraph are visible. */
+  display: none;
+}
+
+/* ________________ Styling Toggle Bar ________________ */
+
+#act_toggle_bar {
+  margin-left: 30px;
+  margin-bottom: 50px;
+  height: 110px;
+}
+
+.button_menu {
+/*Div containing filter button and corresponding drop-down*/
+  float: left;
+}
+
+/*Filter Buttons*/
+.filters {
+  margin-left: 15px;
+  padding: 10px 20px;
+  background-color: #71B238; /*Lime Green*/
+  border-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  color: #222; /*Dark Gray*/
+  cursor: pointer;
+  /*Skew Buttons*/
+  transform: skew(-10deg);
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+}
+
+.filters:hover, .active {
+   background-color: #FFFFC8; /*Lemon Chiffon*/
+   color: #4B4400; /*Brown*/
+ }
+
+/*Drop-Down Menu*/
+select {
+  visibility: hidden;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  width: 96%;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 20px;
+}
+
+select option[disabled]:first-child {
+/*Disable the "Select A Season" or "Select A Day" default
+  value so that it doesn't appear as a menu option*/
+  display: none;
+}
+
+/* _________________ Styling Activity Chart _____________ */
+
+#activity_chart {
+  width: 800px;
+  height: 500px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR CALEDNAR.HTML
+********************************************************************************
+*/
+
+#main_calendar {
+  width: 100%;
+  height: 980px;
+  /* Background pattern from subtlepatterns.com */
+  background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/congruent_outline.png");
+  text-align: center;
+}
+
+#main_calendar h1 {
+  margin: 0;
+  padding: 30px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 50px;
+  color: #bbb;
+}
+
+#main_calendar iframe {
+  margin: 10px 0;
+}
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR NEWS.HTML
+********************************************************************************
+*/
+
+/*_______ Style Maintenance Message ______ */
+
+.mainten_style {
+  padding-top: 30px;
+  width: 100%;
+  height: 740px;
+  background-color: #ddd; /*Light Gray*/
+  /*Transparent Background Pattern from https://www.transparenttextures.com/ */
+  background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  font-family: 'Alegreya Sans SC', sans-serif;
+  text-align: center;
+}
+
+.mainten_style h1, .mainten_style h2 {
+  margin: 0;
+  font-size: 80px;
+  color: #333; /*Dark Gray*/
+}
+
+.mainten_style h2 {
+  margin: 15px auto;
+  margin-bottom: 30px;
+  width: 750px;
+  font-size: 30px;
+}
+
+/*#main_news {
+  background-color: #bbb;
+}*/
+
+
+
+/*
+********************************************************************************
+CSS STYLING FOR MEMBERSHIP.HTML
+********************************************************************************
+*/
+
+#main_membership {
+  height: 650px;
+  background-image: url(../images/pebbles_bkgnd.png);
+}
+
+/*Styling For Div Containing 3 Sign Up Buttons*/
+#all_options {
+  margin: 0;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+/* _____________ Hover Animation Effect on Sign-Up Buttons ____________ */
+     /*Borrowed/Adapted from http://codepen.io/sethabbott/pen/FtuLz*/
+
+#all_options * {
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li.option {
+  margin: 0 60px;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  width: 350px;
+  height: 300px;
+}
+
+/* ___________________ Button Rotation Effect _________________ */
+    /*Borrowed/Adapted from http://codepen.io/sethabbott/pen/FtuLz*/
+
+@-moz-keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+}
+
+@-webkit-keyframes rotate {
+		0% {transform: rotate(0deg);}
+		100% {transform: rotate(-360deg);}
+}
+
+@keyframes rotate {
+  		0% {transform: rotate(0deg);}
+  		100% {transform: rotate(-360deg);}
+}
+
+.sign_up {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  box-shadow: 3px 7px 10px rgba(100,100,100,0.9);
+  border-radius: 100px;
+  z-index: 1;
+  border-width: 8px;
+  border-style: solid;
+}
+
+.sign_up:hover {
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  font-size: 1px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+	-moz-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+	box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+	z-index: 2;
+	border-size: 10px;
+  -webkit-transform: rotate(-360deg);
+	-moz-transform: rotate(-360deg);
+	transform: rotate(-360deg);
+}
+
+.sign_up span.sign_up {
+  display: block;
+  opacity: 0;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  font-size: 1px;
+  border: none;
+  padding: 20px;
+  font-weight: normal;
+  color: #000;
+}
+
+.sign_up span:hover {
+	opacity: .85;
+	font-size: 50px;
+	-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	-moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	text-shadow: 0 1px 1px rgba(0,0,0,.5);
+}
+
+/* ____ Set Colors For "Become A Member" Button ____ */
+/*Adapted from http://codepen.io/sethabbott/pen/FtuLz*/
+
+.member {
+  background-color: rgba(166,203,69,1);
+  color: rgba(111,138,38,1);
+  border-color: rgba(111,138,38,0.7);
+}
+
+a.member:hover {
+  color: rgba(166,203,69,1);
+}
+
+.member span {
+  background: rgba(166,203,69,0.7);
+}
+
+/* ____ Set Colors For "Become A Leader" Button ____ */
+/*Adapted from http://codepen.io/sethabbott/pen/FtuLz*/
+
+a.leader {
+  background-color: rgba(186,215,155,1);
+  color: rgba(117,164,66,1);
+  border-color: rgba(117,164,66,0.7);
+}
+
+a.leader:hover {
+  color: rgba(186,215,155,1);
+}
+
+.leader span {
+  background: rgba(186,215,155,0.7);
+}
+
+/* ____ Set Colors For "Sponsor Us" Button ____ */
+/*Adapted from http://codepen.io/sethabbott/pen/FtuLz*/
+
+a.sponsor {
+  background-color: rgba(113,178,56,1);
+  color: rgba(74,116,37,1);
+  border-color: rgba(74,116,37,0.7);
+}
+
+a.sponsor:hover {
+  color: rgba(113,178,56,1);
+}
+
+.sponsor span {
+  background: rgba(113,178,56,0.7);
+}
+
+
+/*
+********************************************************************************
+CSS STYLING FOR MEMBER_SIGNUP.HTML
+********************************************************************************
+*/
+
+#main_member_signup {
+  height: 650px;
+  padding-top: 30px;
+  background-image: url(../images/hands.png);
+  background-size: 100%;
+}
+
+/* ________ Page Title ________*/
+
+#main_member_signup h1 {
+  margin: 100px auto;
+  margin-bottom: 60px;
+  width: 980px;
+  font-size: 150px;
+  color: #ddd; /*Gray*/
+}
+
+/* ________ Style Application Button  ________*/
+
+#app_button {
+  margin: 0 auto;
+  padding: 20px 30px;
+  width: 500px;
+  display: block;
+  background-color: #71B238; /*Lime Green*/
+  border-radius: 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 45px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff; /*White*/
+  /*Ensures button smoothly returns to initial size after hover*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+/* Button Hover Effect */
+#app_button:hover {
+  background-color: gold;
+  color: #555; /*Dark Gray*/
+  /*Enlarge Button By 10%*/
+  -webkit-transform: scale(1.10);
+  -moz-transform: scale(1.10);
+  transform: scale(1.10);
+  /*Ensures Button Size Increases Smoothly*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+/* __________ Styling Green Back Arrow Button _________ */
+
+.back_buttons {
+  margin-left: 25px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  background-color: #71B238; /*Lime Green*/
+  background-image: url(../images/back_arrow.png);
+  background-size: 100%;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer; /*Makes Button Appear Clickable*/
+  /*Ensures button smoothly returns to initial size after hover*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+.back_buttons:hover {
+  background-color: #F1703F; /*Orange-Red*/
+  /*Enlarge Button Size By 20%*/
+  -webkit-transform: scale(1.20);
+  -moz-transform: scale(1.20);
+  transform: scale(1.20);
+  /*Ensures Button Size Increases Smoothly*/
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  transition: transform 0.5s ease;
+}
+
+
+/*
+********************************************************************************
+CSS STYLING FOR SPONSOR_SIGNUP.HTML
+********************************************************************************
+*/
+
+#main_sponsor_signup {
+  height: 590px;
+  padding-top: 30px;
+  background-image: url(../images/sponsor2.png);
+}
+
+/* ______________________ Page Title ____________________ */
+
+#main_sponsor_signup h1 {
+  margin: 0;
+  width: 800px;
+  float: left;
+  font-size: 150px;
+  text-align: center;
+  line-height: 1em;
+  text-shadow: -3px 0 black, 0 3px black, 1px 0 black, 0 -1px black;
+  color: #ddd; /*Off-White*/
+}
+
+/* ________________________________________________________
+   Universal E-Mail Form Styling
+
+   Both sponsor_signup.html & contact.html include e-mail
+   forms similar in structure/design.
+   ______________________________________________________*/
+
+   /* Styling for Input Text Fields*/
+   input[type = text] {
+     margin-bottom: 30px;
+     padding: 23px 15px;
+     width: 500px;
+     height: 35px;
+     box-sizing: border-box;
+     border: 3px solid;
+     border-radius: 4px;
+     font-family: 'Port Lligat Sans', sans-serif;
+     font-size: 27px;
+     color: #F1703F; /*Orange-Red*/
+   }
+
+   /*Styling for Input Labels*/
+   label {
+     font-family: "Alegreya Sans SC", sans-serif;
+     font-weight: bolder;
+     font-size: 22px;
+     color: #555; /*Dark Gray*/
+   }
+
+   /*Styling for "Required" Labels*/
+   .req {
+     margin-top: 5px;
+     float: right;
+     font-size: 15px;
+     color: #F1703F; /*Orange-Red*/
+   }
+
+   /*Styling for Submit Button*/
+   input[type = submit] {
+     margin: 0 auto;
+     padding: 15px;
+     width: 200px;
+     display: block;
+     border: none;
+     font-family: "Alegreya Sans SC", sans-serif;
+     font-weight: bolder;
+     font-size: 30px;
+     text-align: center;
+     color: #444; /*Dark-Gray*/
+   }
+
+   /*Hover Effect for Submit Button*/
+   input[type = submit]:hover {
+     cursor: pointer;
+     transition: background-color 0.5s ease;
+   }
+
+/* ___________________ Sponsor Signup Form _______________ */
+    /*Styling Unique to sponsor_signup.html email form */
+
+#sponsor_form {
+  margin-right: 50px;
+  padding: 20px;
+  padding-top: 40px;
+  float: right;
+  width: 500px;
+  height: 500px;
+  background-color: #BAD79B; /*Pastel Green*/
+  border-radius: 10px;
+}
+
+#sponsor_form input[type = text] {
+  background-color: #eee; /*Off-White*/
+  border-color: #eee;
+}
+
+/*Removes Yellow Autofill Background*/
+#sponsor_form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #eee inset; /*Off-White*/
+    -webkit-text-fill-color: #F1703F; /*Orange-Red*/
+}
+
+#sponsor_form input[type = submit] {
+  margin: -10px auto;
+  background-color: #F1703F; /*Orange-Red*/
+}
+
+#sponsor_form input[type = submit]:hover {
+  margin: -10px auto;
+  background-color: #555; /*Dark Gray*/
+  color: #fff /*White*/
+}
+
+
+/*
+********************************************************************************
+CSS STYLING FOR LEADER_SIGNUP.HTML
+********************************************************************************
+*/
+
+#main_leader_signup {
+  //background-color: antiquewhite; //#ffdab9; /*Peachpuff*/
+}
+
+/*
+********************************************************************************
+CSS STYLING FOR CONTACT.HTML
+********************************************************************************
+*/
+
+#main_contact {
+  width: 100%;
+  height: 850px;
+  background-color: #FFFFC8;
+}
+
+.column {
+  float: left;
+  margin-left: 100px;
+  padding-right: 150px;
+  width: 500px;
+}
+
+/* ___________COLUMN 1: CONTACT US ____________ */
+
+.contact_text {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 25px;
+  color: #555; /*Dark Gray*/
+}
+
+#address {
+  float: left;
+  margin-right: 100px;
+}
+
+#map {
+  text-align: center;
+  background-color: gold;
+  width: 510px;
+  height: 460px;
+}
+
+iframe {
+  margin-top: 5px;
+}
+
+/* ___________COLUMN 2: GENERAL INQUIRIES (EMAIL FORM)_____________ */
+           /*Styling Unique to contact.html email form */
+
+/* Styling for Input Text Fields*/
+#contact_form input[type = text] {
+  background-color: #FDE3A2; /*Pastel Orange*/
+  border-color: #FDE3A2;
+}
+
+/*Removes Yellow Autofill Background*/
+#contact_form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #FDE3A2 inset; /*Pastel Orange*/
+  -webkit-text-fill-color: #F1703F; /*Orange-Red*/
+}
+
+/*Styling "Message" Textarea*/
+#contact_form textarea {
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  width: 500px;
+  height: 185px;
+  box-sizing: border-box;
+  background-color: #FDE3A2; /*Pastel Orange*/
+  border: 3px solid #FDE3A2;
+  border-radius: 4px;
+  font-family: 'Port Lligat Sans', sans-serif;
+  font-size: 27px;
+  color: #F1703F; /*Orange-Red*/
+}
+
+/*Setting Submit Button Color*/
+#contact_form input[type = submit] {
+  background-color: gold;
+}
+
+/*Setting Submit Button Hover Color*/
+#contact_form input[type = submit]:hover {
+  background-color: #F1703F; /*Orange-Red*/
+}
+
+/* ___________ BOTH COLUMNS (GOLD HEADERS) ____________ */
+
+.contact_headers {
+/*Header is placed in this div to add skewed edges*/
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: gold;
+  text-align: center;
+}
+
+/*Left Skewed Edge*/
+.contact_headers::before {
+  content: " ";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  top: 0;
+  left: -15px;
+  background-color: gold;
+  /*Apply Skew*/
+  transform: skew(30deg);
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+}
+
+/*Right Skewed Edge*/
+.contact_headers::after {
+  content: " ";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  top: 0;
+  left: 485px;
+  background-color: gold;
+  /*Apply Skew*/
+  transform: skew(-30deg);
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+}
+
+/*Header Text*/
+.contact_headers h2 {
+  margin-bottom: 50px;
+  padding: 10px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<!--
+FILENAME: membership.html
+AUTHOR: Amal Tidjani
+DATE: August 2016
+-->
+
+    <head>
+        <title>Join NEYA (New England Youth Alliance)</title>
+        <meta name = "description" content = "Would you like to become a part of the NEYA community? Sign up now!">
+        <meta name = "author" content = "Amal Tidjani">
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+        <meta charset = "utf-8">
+
+        <!--CSS Stylesheet-->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Cinzel%7CAlegreya+Sans+SC:400,900' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body>
+
+        <!--
+        *************************************************************************
+             NAVIGATION MENU (HEADER)
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Navigation Menu From index.html-->
+        <header id = "header_here"></header>
+
+
+        <!--
+        *************************************************************************
+             MAIN CONTENT
+        *************************************************************************
+         -->
+
+        <div id = "main_membership">
+
+          <!-- _________________________________________________________________________________________________
+
+              Sign-Up Buttons (#all_options)
+              The page's main content will consist of 3 large sign-up buttons (Become A Member, Become A Leader,
+              & Sponsor Us). Each button has a spinning hover effect, and when clicked, will redirect to a
+              different html page with further information.
+              __________________________________________________________________________________________________
+          -->
+            <ul id = "all_options">
+            <!--Container for the 3 sign-up buttons-->
+
+                <!-- _______________________ "Become A Member" Sign-Up Button ______________________-->
+
+                <li class = "option">
+                    <a href = "member_signup.html" class = "sign_up member"><br>Become &nbsp;A Member <!--No Hover-->
+                        <!--When hovered on, button spins and span element containing a call to action appears-->
+                        <span id = "option_member" class = "sign_up"><br>Want to join <br>our community? <br>Sign up now!</span>
+                    </a>
+                </li> <!--End member button-->
+
+
+                <!-- _____________________ "Become A Leader" Sign-Up Button _______________________-->
+
+                <li class = "option">
+                    <a href = "leader_signup.html" class = "sign_up leader"><br>Become &nbsp;A Leader <!--No Hover-->
+                        <!--When hovered on, button spins and span element containing a call to action appears-->
+                        <span id = "option_leader" class = "sign_up"><br>Want to lend <br>a helping hand? Volunteer now!</span>
+                    </a>
+                </li> <!--End leader button-->
+
+
+                <!-- ______________________ "Sponsor Us" Sign-Up Button ______________________________-->
+
+                <li class = "option">
+                    <a href = "sponsor_signup.html" class = "sign_up sponsor"><br>Sponsor <br>Us <!--No Hover-->
+                        <!--When hovered on, button spins and span element containing a call to action appears-->
+                        <span id = "option_sponsor" class = "sign_up"><br>Care to <br>sponsor us? <br>Let us know!</span>
+                    </a>
+                </li> <!--End sponsor button-->
+
+            </ul> <!--End all_options-->
+
+          </div> <!--End main_membership-->
+
+
+        <!--
+        *************************************************************************
+             FOOTER
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Footer From index.html-->
+        <footer id = "footer_here"></footer>
+
+
+        <!--
+        *************************************************************************
+             JAVASCRIPT FILES
+        *************************************************************************
+         -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--JQUERY-->
+        <script src = "js/animations.js"></script> <!--Animates "Learn More" Links in Footer-->
+        <script src = "js/load.js"></script> <!--Loads Universal Content (Header & Footer)-->
+        <script src = "js/alert.js"></script> <!--Shows Calling Hours Alert in Footer-->
+
+    </body>
+
+</html>

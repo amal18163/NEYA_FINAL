@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<!--
+FILENAME: member_signup.html
+AUTHOR: Amal Tidjani
+DATE: August 2016
+-->
+
+    <head>
+        <title>Become A Member - NEYA (New England Youth Alliance)</title>
+        <meta name = "description" content = "Become a member of NEYA! Sign up now!">
+        <meta name = "author" content = "Amal Tidjani">
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+        <meta charset = "utf-8">
+
+        <!--CSS Stylesheet-->
+        <link href = "css/style.css" rel = "stylesheet">
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Cinzel%7CAlegreya+Sans+SC:400,900' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <!--
+        *************************************************************************
+             NAVIGATION MENU (HEADER)
+        *************************************************************************
+        -->
+
+        <!--Dynamically Load Navigation Menu From index.html-->
+        <header id = "header_here"></header>
+
+
+        <!--
+        *************************************************************************
+               MAIN CONTENT
+        *************************************************************************
+        -->
+
+        <div id = "main_member_signup">
+
+                <!--Back Button (Navigate Back to membership.html)-->
+                <a class = "back_buttons" id = "back_button1" href = "membership.html"></a>
+
+                <!--Page Title-->
+                <h1> MEMBERSHIP </h1>
+
+                <!--Button Linked to Membership Application-->
+                <a id = "app_button" href = "pdf/NEYA_Application.pdf"> Membership Application</a>
+
+        </div> <!--End main_member_page-->
+
+
+        <!--
+        *************************************************************************
+             FOOTER
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Footer From index.html-->
+        <footer id = "footer_here"></footer>
+
+
+        <!--
+        *************************************************************************
+             JAVASCRIPT FILES
+        *************************************************************************
+         -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--JQUERY-->
+        <script src = "js/animations.js"></script> <!--Animates "Learn More" Links in Footer-->
+        <script src = "js/alert.js"></script> <!--Shows Calling Hours Alert in Footer-->
+        <script src = "js/load.js"></script> <!--Loads Universal Content (Header & Footer)-->
+
+    </body>
+
+</html>

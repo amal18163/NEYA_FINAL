@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+FILENAME: our_leaders.html
+AUTHOR: Amal Tidjani
+DATE: July 2016
+-->
+
+    <head>
+        <title> Our Leadership - NEYA (New England Youth Alliance) </title>
+        <meta name = "description" content = "Get to know NEYA's leaders by playing with the interactive bubble chart below!">
+        <meta name = "author" content = "Amal Tidjani">
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+        <meta charset = "utf-8">
+
+        <!--CSS Stylesheet-->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,800%7CCinzel%7CCaveat+Brush' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <!--
+        *************************************************************************
+             NAVIGATION MENU (HEADER)
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Navigation Menu From index.html-->
+        <header id = "header_here"></header>
+
+
+        <!--
+        *************************************************************************
+             MAIN CONTENT
+        *************************************************************************
+         -->
+
+        <div id = "main_leader">
+
+            <!--"Meet Our Leaders" Title Bar-->
+            <h1 class = "title_banner" id = "leader_title">Meet Our <br> &nbsp;&nbsp;&nbsp;&nbsp;Leaders</h1>
+
+
+            <!-- ________________________________ Leaders Interactive Bubble Chart __________________________________ -->
+
+            <div id = "leaders_chart_wrapper">
+
+                <!-- _________________________________________________________________________________________________
+
+                    Biography Sidebar (bio_bar)
+                    Each time a bubble (which represents a leader) is clicked, information about the leader including
+                    their name, age, etc. will be dynamically loaded into the biography sidebar.
+                    __________________________________________________________________________________________________
+                -->
+
+                <div id = "bio_bar">
+                    <!--A placeholder title, "Leader Bio", is displayed at the top of the bio_bar
+                        when no bubbles are clicked. -->
+                    <h1 class = "text_container" id = "name_placeholder">Leader Bio</h1>
+
+                    <!--Instructions on how to interact with the leaders bubble chart are displayed
+                        in the bio_bar's body when no bubbles are clicked. -->
+                    <p class = "text_container" id = "instructions">Click on a bubble to learn more about a leader!</p>
+
+                    <!--The placeholder title is replaced with a leader's name when the leader's
+                        corresponding bubble is clicked on-->
+                    <h1 class = "text_container" id = "leader_name"></h1>
+
+                    <!--The instructions are replaced with basic_info and bio_info when a bubble is clicked-->
+                    <!--Basic Info (Age & Leadership Position)-->
+                    <p class = "text_container" id = "leader_basic">
+                      Age:&nbsp; <span id = "age"></span>
+                      <br>Position:&nbsp; <span id = "position"></span>
+
+                    <!--Bio Info (Short Leader Bio)-->
+                    <p class = "text_container" id = "leader_bio">
+                      Bio: &nbsp;<span id = "bio_text"></span>
+                    </p>
+
+                </div> <!--End bio_bar-->
+
+                <!-- _______________________________________________________________________________
+
+                    Toggle Bar (leaders_toggle_bar)
+                    This toolbar consists of three buttons that allow users to switch between
+                    the chart's different view modes. Clicking on "Show All" displays all leaders.
+                    Clicking "Activity Leaders" filters out the bubbles so that only leaders in
+                    charge of activities are displayed while clicking on "Administrative Leaders"
+                    hides all the activity leaders and displays administrative staff only.
+                    ________________________________________________________________________________
+                -->
+
+                <div id = "leaders_toggle_bar">
+                    <div id = "all" class = "skew button active">Show All</div>
+                    <div id = "activity" class = "skew button">Activity Leaders</div>
+                    <div id = "admin" class = "skew button">Administrative Leaders</div>
+                </div>
+
+                <!-- __________________ Dynamically Add Leaders Bubble Chart _____________________-->
+                <div id = "leaders_chart"></div>
+
+            </div> <!--End leaders_chart_container-->
+
+        </div> <!--End main_leader-->
+
+
+        <!--
+        *************************************************************************
+             FOOTER
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Footer From index.html-->
+        <footer id = "footer_here"></footer>
+
+
+        <!--
+        *************************************************************************
+             JAVASCRIPT FILES
+        *************************************************************************
+         -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--JQUERY-->
+        <script src="lib/d3.js"></script> <!--Loads D3 Library-->
+        <script src="js/leaders_chart.js"></script> <!--Creates Leaders Bubble Chart-->
+        <script src = "js/animations.js"></script> <!--Animates "Learn More" Links in Footer-->
+        <script src = "js/alert.js"></script> <!--Shows Calling Hours Alert in Footer-->
+        <script src = "js/load.js"></script> <!--Loads Universal Content (Header & Footer)-->
+
+    </body>
+
+</html>

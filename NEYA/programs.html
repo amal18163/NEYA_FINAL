@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<!--
+FILENAME: programs.html
+AUTHOR: Amal Tidjani
+DATE: August 2016
+-->
+
+    <head>
+        <title>Programs &amp; Activities - NEYA (New England Youth Alliance)</title>
+        <meta name = "description" content = "Explore all the programs and activities offered at NEYA">
+        <meta name = "author" content = "Amal Tidjani">
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+        <meta charset = "utf-8">
+
+        <!--CSS Stylesheet-->
+        <link href="css/style.css" rel="stylesheet" >
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Cinzel%7CAlegreya+Sans+SC:400,900%7CFarsan%7CCaveat+Brush' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+        <!--
+        *************************************************************************
+             NAVIGATION MENU (HEADER)
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Navigation Menu From index.html-->
+        <header id = "header_here"></header>
+
+
+        <!--
+        *************************************************************************
+             MAIN CONTENT
+        *************************************************************************
+         -->
+        <div id = "main_programs">
+
+            <!--"Programs & Activities" Title Bar-->
+            <h1 class = "title_banner" id = "programs_title">Programs <br> &nbsp;&nbsp;&nbsp;&nbsp;<span>&amp;</span>&nbsp;Activities</h1>
+
+
+            <!-- ________________________________ Upcoming Events Panel __________________________________ -->
+
+            <div id = "upcoming_events">
+
+                <!--___________________ Event #1 ____________________-->
+                <section class = "events">
+                    <!--Floated Black Containers with Event's Date-->
+                    <div class = "display_date">
+                        <p class = "day date">07</p>
+                        <p class = "month date">Sept</p>
+                    </div>
+
+                    <!--Displays Event Name and Description-->
+                    <div class = "info">
+                        <h3>Camping Trip</h3>
+                        <p> A weekend camping trip to the White Mountains </p>
+                        <a class = "event_btn" href = "https://www.google.com/forms/about/">SIGN UP!</a>
+                    </div>
+                </section> <!--End Event #1-->
+
+                <!--___________________ Event #2 ____________________-->
+                <section class = "events">
+                    <!--Floated Black Containers with Event's Date-->
+                    <div class = "display_date">
+                        <p class = "day date">18</p>
+                        <p class = "month date">Sept</p>
+                    </div>
+
+                    <!--Displays Event Name and Description-->
+                    <div class = "info">
+                        <h3>Ice Cream Social</h3>
+                        <p> Get to know our leaders and enjoy a cone of ice cream! </p>
+                        <a class = "event_btn" href = "https://www.google.com/forms/about/">SIGN UP!</a>
+                   </div>
+                </section> <!--End Event #2-->
+
+                <!--___________________ Event #3 ____________________-->
+                <section class = "events">
+                    <!--Floated Black Containers with Event's Date-->
+                    <div class = "display_date">
+                        <p class = "day date">22</p>
+                        <p class = "month date">Sept</p>
+                    </div>
+
+                    <!--Displays Event Name and Description-->
+                    <div class = "info">
+                        <h3>Ping Pong Tournament</h3>
+                        <p> Love Ping Pong? Join our evening tourney! </p>
+                        <a class = "event_btn" href = "https://www.google.com/forms/about/">SIGN UP!</a>
+                    </div>
+               </section> <!--End Event #3-->
+
+            </div> <!--End upcoming_events-->
+
+
+            <!-- _________________________ Decorative Page Break _____________________________ -->
+
+            <h2 class = "programs_h2"> But wait! There's more...</h2>
+            <h2 class = "programs_h2"> Explore all of NEYA's programs and activities below </h2>
+            <img id = "arrows" src = "images/arrow_abstract2.png" alt = "decorative down arrow">
+
+
+
+            <!-- ________________________ Activity Interactive Bubble Chart ________________________ -->
+
+            <div id = "activity_chart_wrapper">
+
+                <!-- _________________________________________________________________________________________________
+
+                    Activity Sidebar (act_info_bar)
+                    Each time a bubble (which represents an activity) is clicked, information about when the activity,
+                    is offered, including the days and seasons, will be dynamically loaded into the activity sidebar.
+                    __________________________________________________________________________________________________
+                -->
+
+                <div id = "act_info_bar">
+                    <!--A placeholder title, "Activity", is displayed at the top of the act_info_bar
+                        when no bubbles are clicked. -->
+                    <h1 class = "text_container" id = "title_placeholder">Activity</h1>
+
+                    <!--Instructions on how to interact with the activity bubble chart are displayed
+                        in the act_info_bar's body when no bubbles are clicked. -->
+                    <p class = "text_container" id = "instructions">Click on a bubble to learn more about an activity!</p>
+
+                    <!--The placeholder title is replaced with an activity's name when the activity's
+                        corresponding bubble is clicked-->
+                    <h1 class = "text_container" id = "activity_title"></h1>
+
+                    <!--The instructions are replaced with activity_basic and activity_descrip when a bubble is clicked-->
+                    <!--Basic Activity Info (Days & Seasons Offered)-->
+                    <p class = "text_container" id = "activity_basic">
+                        Days:&nbsp; <span id = "day"></span>
+                        <br>Seasons:&nbsp; <span id = "season_offered"></span>
+                        <br>Program Type:&nbsp; <span id = "category"></span>
+                    </p>
+
+                    <!--Activity Description-->
+                    <p class = "text_container" id = "activity_descrip">
+                        Description: &nbsp;<span id = "description"></span>
+                    </p>
+                </div> <!--End act_info_bar-->
+
+                <!-- _______________________________________________________________________________
+
+                    Toggle Bar (act_toggle_bar)
+                    This toolbar consists of three buttons that allow users to switch between
+                    the chart's different view modes. Clicking on "Show All" displays all activities.
+
+                    Clicking "Filter By Season" will make a drop-down menu appear. Users can select
+                    one of five options (Fall, Winter, Spring, Summer, or All-Year-Round). The
+                    bubbles will filter accordingly so that only activities corresponding to the
+                    selected season will display.
+
+                    Clicking "Filter By Days Of Week" will make a drop-down menu appear. Users can
+                    select one of three options (Weekdays Only, Weekends Only, or Both). The bubbles
+                    will filter accordingly so that only activities corresponding to the selected
+                    days will display.
+                    ________________________________________________________________________________
+                -->
+
+                <div id = "act_toggle_bar">
+
+                    <!--"Show All" Button-->
+                    <div id = "all" class = "button_menu filters active">Show All</div>
+
+                    <!--Container for "Filter By Season" button and its corresponding
+                        drop-down menu. The drop-down menu is initially hidden and shown
+                        when "Filter By Season" button is clicked-->
+                    <div class = "button_menu">
+                        <!--"Filter By Season" Button-->
+                        <div id = "season" class = "filters">Filter By Season</div>
+
+                        <!--Drop-Down Menu-->
+                        <select id = "season_drop_menu" class = "select">
+                            <option value = "choose" selected disabled>Select a Season</option>
+                            <option>Fall</option>
+                            <option>Winter</option>
+                            <option>Spring</option>
+                            <option>Summer</option>
+                            <option value = "all">All-Year-Round</option>
+                        </select>
+
+                    </div> <!--End button_menu-->
+
+                    <!--Container for "Filter By Days Of Week" button and its corresponding
+                        drop-down menu. The drop-down menu is initially hidden and shown
+                        when "Filter By Days Of Week" button is clicked-->
+                    <div class = "button_menu">
+
+                        <!--"Filter By Days Of Week" Button-->
+                        <div id = "week" class = "filters">Filter By Days of Week</div>
+
+                        <!--Drop-Down Menu-->
+                        <select id = "week_drop_menu" class = "select">
+                            <option value = "choose" selected disabled>Select Days</option>
+                            <option>Weekdays Only</option>
+                            <option>Weekends Only</option>
+                            <option>Both</option>
+                        </select>
+
+                    </div> <!--End button_menu-->
+
+                </div> <!--End act_toggle_bar-->
+
+                <!-- __________________ Dynamically Add Activity Bubble Chart _____________________-->
+                <div id = "activity_chart"></div>
+
+            </div> <!--End activity_chart_wrapper-->
+
+        </div> <!--End main_programs-->
+
+
+        <!--
+        *************************************************************************
+             FOOTER
+        *************************************************************************
+         -->
+
+        <!--Dynamically Load Footer From index.html-->
+        <footer id = "footer_here"></footer>
+
+
+        <!--
+        *************************************************************************
+             JAVASCRIPT FILES
+        *************************************************************************
+         -->
+
+        <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--JQUERY-->
+        <script src="lib/d3.js"></script> <!--D3 Library-->
+        <script src = "js/activity_chart.js"></script> <!--Creates Activity Bubble Chart-->
+        <script src = "js/animations.js"></script> <!--Animates "Learn More" Links in Footer-->
+        <script src = "js/alert.js"></script> <!--Shows Calling Hours Alert in Footer-->
+        <script src = "js/load.js"></script> <!--Loads Universal Content (Header & Footer)-->
+
+    </body>
+
+</html>

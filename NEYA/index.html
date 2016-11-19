@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<!--
+FILENAME: index.html
+AUTHOR: Amal Tidjani
+DATE: August 2016
+-->
+
+    <head>
+        <title> Home - NEYA (New England Youth Alliance) </title>
+        <meta name = "description" content = "Welcome to NEYA (New England Youth Alliance), where youth across New England partake in programs ranging from fun, outdoor activities to academic clubs.">
+        <meta name = "author" content = "Amal Tidjani">
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+        <meta charset = "utf-8">
+
+        <!--CSS Stylesheet-->
+        <link href = "css/style.css" rel = "stylesheet">
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Cinzel%7CCaveat+Brush%7CAlegreya+Sans+SC%7CShadows+Into+Light%7CArima+Madurai%7CCandal' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+
+          <!--
+          *************************************************************************
+               NAVIGATION MENU (HEADER)
+          *************************************************************************
+           -->
+          <header>
+              <nav class = "nav_menu">
+                <ul>
+                    <li><a href = "index.html">Home</a></li>
+
+                    <!--About Us Drop-Down Menu-->
+                    <li id = "drop_menu">About Us
+                        <ul>
+                            <li><a href = "who_we_are.html">Who We Are</a></li>
+                            <li><a href = "our_story.html">Our Story</a></li>
+                            <li><a href = "our_leaders.html">Our Leadership</a></li>
+                            <li><a href = "our_sponsors.html">Our Sponsors</a></li>
+                        </ul> <!--End drop_menu-->
+                    </li>
+
+                    <li><a href = "programs.html">Programs</a></li>
+                    <li><a href = "calendar.html">Calendar</a></li>
+                    <li><a href = "news.html">News</a></li>
+                    <li><a href = "membership.html">Become A Member</a></li>
+                    <li><a href = "contact.html">Contact Us</a></li>
+                </ul>
+              </nav> <!--End nav_menu-->
+
+              <!-- Bottom Border: Image that functions as navigation menu's bottom border-->
+              <img src = "images/header_border3.png" alt = "border">
+
+          </header> <!--End Navigation Menu-->
+
+
+          <!--
+          *************************************************************************
+               MAIN CONTENT
+          *************************************************************************
+          -->
+          <div id = "main_index">
+
+              <!-- Lime-Green Vertical Bar (On The Left)-->
+              <img id = "decor_bar" src = "images/decor_bar.png" alt = "decorative bar">
+
+              <!-- Clickable "NEYA" Title -->
+              <!--Span element will be resized to encompass entire h1 element, making the
+                  h1 element function as a clickable link-->
+              <h1><a href = "who_we_are.html"><span class = "linkable"></span></a>NEYA</h1>
+
+              <!-- Clickable Slogan -->
+              <div id = "slogan">
+                  <a href = "our_story.html"><span class = "linkable"></span></a>
+                  <h1 class = "slogan_spacing" id = "slogan_num">1</h1>
+                  <h1 class = "slogan_spacing" id = "slogan1">FAMILY</h1>
+                  <h1 class = "slogan_spacing" id = "slogan2">GOAL</h1>
+                  <h1 class = "slogan_spacing" id = "slogan3">PURPOSE</h1>
+              </div> <!--End slogan-->
+
+              <!-- __________________________________ SLIDESHOW _______________________________________ -->
+
+              <!-- Green Slideshow Container/Background -->
+              <img id = "slideshow_container" src = "images/slideshow_container.png" alt = "Green Slideshow Background">
+
+              <!-- Slideshow Image Containers -->
+              <div class = "img_container small" id = "img1"></div> <!--Images to be dynamically added-->
+              <div class = "img_container large"></div>
+              <div class = "img_container small" id = "img3"></div>
+
+              <!--Rotating Dotted Borders-->
+              <img class = "rotating border_small" id = "img_border1" src = "images/ellipse_small.png" alt = "dotted border">
+              <img class = "rotating border_large" id = "img_border2" src = "images/ellipse_large.png" alt = "dotted border">
+              <img class = "rotating border_small" id = "img_border3" src = "images/ellipse_small.png" alt = "dotted border">
+
+              <!--Dark Filters Over Small Image Containers -->
+              <div id = "filter_left" class = "img_filter"></div>
+              <div id = "filter_right" class = "img_filter"></div>
+
+        </div> <!--End main_index -->
+
+
+        <!--
+        *************************************************************************
+             FOOTER
+        *************************************************************************
+         -->
+        <footer>
+
+            <!-- Top-Border: Image that functions as footer's top border -->
+            <img src = "images/footer_border2.png" alt = "Footer Border">
+
+            <!-- ____________ FOOTER COLUMN 1: (LEARN MORE) _____________________-->
+                          <!--Menu of Site's Highlighted Pages -->
+
+            <div id = "learn_more">
+
+                <h3> Learn More </h3>
+
+                <!-- Link To: Who We Are Page-->
+                <span><img id = "1a" src = "images/bullet.png" alt = "bullet"></span> <!-- Bullet To Be Dynamically Added On Hover -->
+                    <a id = "1" href = "who_we_are.html"> Who We Are </a>
+                <span><img id = "1b" src = "images/bullet.png" alt = "bullet"></span> <!-- Bullet To Be Dynamically Added On Hover -->
+
+                <!-- Link To: Our Story -->
+                <br><span><img id = "2a" src = "images/bullet.png" alt = "bullet"></span> <!-- Etc. -->
+                    <a id = "2" href = "our_story.html"> Our Story </a>
+                <span><img id = "2b" src = "images/bullet.png" alt = "bullet"></span> <!-- Etc. -->
+
+                <!-- Link To: Programs & Activities -->
+                <br><span><img id = "3a" src = "images/bullet.png" alt = "bullet"></span>
+                    <a id = "3" href = "programs.html"> Programs &amp; Activities </a>
+                <span><img id = "3b" src = "images/bullet.png" alt = "bullet"></span>
+
+                <!-- Link To: Calendar -->
+                <br> <span><img id = "4a" src = "images/bullet.png" alt = "bullet"></span>
+                    <a id = "4" href = "calendar.html"> Calendar </a>
+                <span><img id = "4b" src = "images/bullet.png" alt = "bullet"></span>
+
+                <!-- Link To: News -->
+                <br><span><img id = "5a" src = "images/bullet.png" alt = "bullet"></span>
+                    <a id = "5" href = "news.html"> News </a>
+                <span><img id = "5b" src = "images/bullet.png" alt = "bullet"></span>
+
+            </div> <!--End Column 1-->
+
+
+            <!-- ____________________________COLUMN 2: (FOLLOW US)_______________________________-->
+                                          <!-- Social Media Icons -->
+
+            <div id = "follow_us">
+                <h3> Follow Us</h3>
+
+                <!-- Link To: NEYA's Facebook Page -->
+                <a href = "http://facebook.com">
+                    <img class = "connect_icons" src = "images/fb_icon.png" alt = "NEYA's Facebook"
+                         width = "60">
+                </a>
+
+                <!-- Link To: NEYA's Pinterest Account -->
+                <a href = "http://pinterest.com">
+                    <img class = "connect_icons" src = "images/pinterest.png" alt = "NEYA's Pinterest"
+                         width = "53">
+                </a>
+
+                <!-- Link To: NEYA's Twitter Profile -->
+                <a href = "http://twitter.com">
+                    <img class = "connect_icons" src = "images/twitter_icon.png" alt = "NEYA's Twitter"
+                         width = "60">
+                </a>
+
+            </div> <!--End Column 2-->
+
+            <!-- _________________________________COLUMN 3: (CONTACT US)___________________________________-->
+                                          <!-- NEYA's Contact Information -->
+
+            <div id = "contact_us">
+                <h3> Contact Us</h3>
+
+                <!-- NEYA Center's Address -->
+                <div class = "contact_icons">
+                    <a href = "contact.html"><img src = "images/pin.png" alt = "Address" height= "50"></a>
+                    <p> 52 Cauliflower Lane <br>Fluffington, MA 01816 </p>
+                </div>
+
+                <!-- NEYA's Telephone Number -->
+                <div class = "contact_icons">
+                    <img id = "tel" src = "images/phone.png" alt = "Telephone" height = "50">
+                    <p> 1-800-414-NEYA </p>
+                </div>
+
+                <!-- NEYA's E-mail -->
+                <div class = "contact_icons">
+                    <a href = "contact.html"><img src = "images/mail.png" alt = "E-mail" width="38"></a>
+                    <p> neya@gmail.com </p>
+                </div>
+
+                <!--Alert Box Containing Calling Hours (Hidden) -->
+                <div class = "alert">
+                    <div id = "triangle"></div> <!--Bubble Callout-->
+                    <img src = "images/alert.png" alt = "alert"> <!--Image of Exclamation Point-->
+                    <span> Calling Hours: 8AM - 5PM </span>
+                </div>
+
+
+            </div> <!--End Column 3-->
+
+
+            <!-- _______________________________COPYRIGHT____________________________ -->
+
+            <hr id = "footer_line">
+            <p id = "copyright"> &copy; 2016 NEYA &nbsp; | &nbsp; All Rights Reserved. </p>
+
+        </footer> <!--End footer-->
+
+
+        <!--
+        *************************************************************************
+             JAVASCRIPT FILES
+        *************************************************************************
+         -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> <!--JQUERY-->
+        <script src = "js/animations.js"></script> <!--Animates "Learn More" Links in Footer-->
+        <script src = "js/home_slideshow.js"></script> <!--Animates Home Page's Slideshow-->
+        <script src = "js/alert.js"></script> <!--Shows Calling Hours Alert in Footer-->
+
+  </body>
+
+</html>
